@@ -18,7 +18,7 @@ export default function Login() {
       toast.success("Login successful!");
       window.location.href = "/dashboard";
     } catch (err) {
-      toast.error("Invalid email or password");
+      toast.error("Invalid email or password"|| "Login failed" || err.message);
     } finally {
       setLoading(false);
     }
