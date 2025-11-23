@@ -10,14 +10,14 @@ const Link = require('./models/Link');
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://url-shortener-frontend-n1pg.onrender.com",
-    "url-shortener-sepia-tau.vercel.app",
-    "*"
-  ],
-  credentials: true
+  origin: (origin, callback) => {
+    callback(null, origin || "*");
+  },
+  credentials: true,
+  methods: "GET,POST,PUT,DELETE,OPTIONS",
+  allowedHeaders: "Content-Type,Authorization",
 }));
+
 
 connectDB();
 

@@ -11,7 +11,7 @@ export default function Register() {
       await API.post("/api/auth/register", { email, password });
       window.location.href = "/login";
     } catch (err) {
-      alert("User already exists");
+      alert("User already exists" || "Registration failed"|| err.message);
     }
   };
 
