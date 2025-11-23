@@ -9,7 +9,13 @@ const Link = require('./models/Link');
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173', credentials: false }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://url-shortener-frontend-n1pg.onrender.com"
+  ],
+  credentials: true
+}));
 
 connectDB();
 
