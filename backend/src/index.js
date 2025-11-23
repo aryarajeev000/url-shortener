@@ -12,7 +12,8 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://url-shortener-frontend-n1pg.onrender.com"
+    "https://url-shortener-frontend-n1pg.onrender.com",
+    "url-shortener-sepia-tau.vercel.app"
   ],
   credentials: true
 }));
