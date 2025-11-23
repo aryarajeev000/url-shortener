@@ -2,7 +2,7 @@ import { useState } from "react";
 import API from "../api/axios";
 
 export default function LinkCard({ link, onDelete }) {
-  const shortUrl = `http://localhost:4000/${link.shortCode}`;
+  const shortUrl = `${import.meta.env.VITE_API_URL}/${link.shortCode}`;
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
