@@ -14,7 +14,7 @@ export default function CreateLink() {
     try {
       const res = await API.post("/api/links", { originalUrl: url });
 
-      const generated = `http://localhost:4000/${res.data.shortCode}`;
+      const generated = `${import.meta.env.VITE_API_URL}/${res.data.shortCode}`;
       toast.success("Short link created!");
       toast.success("Copied to clipboard!");
       navigator.clipboard.writeText(generated);

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://url-shortener-backend-28d0.onrender.com",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Attach token automatically
